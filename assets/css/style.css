@@ -1092,131 +1092,100 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
 }
-
-.review-section {
-  padding: 40px 20px;
-  background-color: #f2f7ff;
-  text-align: center;
-  overflow: hidden;
+/* Yorumlar Bölümü - CSS */
+.yorumlar-testimonials {
+  padding-block-end: 120px;
+  padding-block-start: 60px;
+  background-color: #f0f4ff; /* Arka plan rengi değiştirildi */
 }
 
-.review-title {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 30px;
-}
-
-.review-slider {
-  position: relative;
-  max-width: 100%;
-  overflow: hidden;
-}
-
-.review-slider-wrapper {
+.yorumlar-testimonials-list {
   display: flex;
-  transition: transform 0.5s ease;
+  gap: 20px;
+  overflow-x: auto;
+  padding-block-end: 20px;
+  margin-block-end: -10px;
+  scroll-snap-type: x mandatory;
 }
 
-.review-card {
+.yorumlar-scrollbar-item {
+  min-width: calc(50% - 20px);
+  scroll-snap-align: center;
+}
+
+.yorumlar-review-card {
+  padding: 25px;
   background: #fff;
   border-radius: 15px;
+  text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 0 10px;
-  padding: 20px;
-  flex: 0 0 calc(25% - 20px); /* Maksimum 4 kart aynı anda */
-  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.review-card-header {
+.yorumlar-review-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.yorumlar-review-card-header {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
 }
 
-.review-profile-pic {
+.yorumlar-review-profile-pic {
   width: 80px;
   height: 80px;
   border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffd700; /* Fotoğraf çevresine sarı bir sınır eklendi */
 }
 
-.review-name {
+.yorumlar-review-name {
   text-align: center;
 }
 
-.review-name h3 {
+.yorumlar-review-name h3 {
   font-size: 18px;
   font-weight: bold;
   color: #333;
   margin-bottom: 5px;
 }
 
-.review-name p {
+.yorumlar-review-name p {
   font-size: 14px;
   color: #777;
 }
 
-.review-stars {
-  font-size: 24px;
-  color: #ffd700;
-  margin-top: -5px;
+.yorumlar-review-stars {
+  font-size: 1.8rem;
+  color: #ffd700; /* Yıldız rengi sarı olarak ayarlandı */
+  margin-top: 5px;
 }
 
-.review-content {
-  font-size: 16px;
-  font-weight: bold;
+.yorumlar-card-text {
+  font-size: 1.6rem;
+  line-height: 1.6;
   color: #333;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
-.prev-btn,
-.next-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #e0e0e0;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.prev-btn {
-  left: 10px;
-}
-
-.next-btn {
-  right: 10px;
-}
-
-/* Mobil cihazlara uygun tasarım */
 @media (max-width: 768px) {
-  .review-card {
-    flex: 0 0 calc(80% - 20px); /* Mobilde kart sayısını azalt */
-    margin: 0 5px;
+  .yorumlar-testimonials-list {
+    gap: 20px;
   }
 
-  .review-slider-wrapper {
-    width: calc(100% + 10px);
-  }
-
-  .prev-btn, .next-btn {
-    width: 30px;
-    height: 30px;
+  .yorumlar-scrollbar-item {
+    min-width: calc(100% - 20px);
   }
 }
 
-@media (max-width: 480px) {
-  .review-card {
-    flex: 0 0 calc(90% - 10px); /* Daha dar ekranlar için tek kartı ekrana daha uyumlu yapıyor */
-    margin: 0 5px;
+@media (min-width: 1200px) {
+  .yorumlar-scrollbar-item {
+    min-width: calc(33.33% - 20px);
   }
 }
-
-
 
 
 }
